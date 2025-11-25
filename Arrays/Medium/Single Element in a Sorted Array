@@ -1,0 +1,14 @@
+class Solution:
+    def singleNonDuplicate(self, nums: List[int]) -> int:
+        dic = {}
+        if len(nums) == 1:
+            return nums[0]
+        
+        for i in range(len(nums)):
+            if nums[i] not in dic:
+                dic[nums[i]] = 1
+            else:
+                dic[nums[i]] += 1
+        for i in dic:
+            if dic[i] == 1:
+                return i
